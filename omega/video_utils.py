@@ -31,7 +31,7 @@ def clip_video(video_path: str, start: int, end: int) -> Optional[BinaryIO]:
 
 def skip_live(info_dict):
     """
-    function to skip downloading if it's a live video (yt_dlp doesn't respect the 20 minute 
+    function to skip downloading if it's a live video (yt_dlp doesn't respect the 20 minute
     download limit for live videos), and we don't want to hang on an hour long stream
     """
     if info_dict.get("is_live"):
@@ -105,7 +105,7 @@ def download_video(
         raise FakeVideoException(f"Invalid video ID: {video_id}")
 
     video_url = f"https://www.youtube.com/watch?v={video_id}"
-    
+
     temp_fileobj = tempfile.NamedTemporaryFile(suffix=".mp4")
     ydl_opts = {
         "format": "worst",  # Download the worst quality
